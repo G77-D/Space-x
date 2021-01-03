@@ -1,25 +1,123 @@
-/* landing page */
+@import url("https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap");
 
 :root {
 	--primary-color: #3a4052;
 }
 
-* {
-	box-sizing: border-box;
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
-  overflow: hidden;
+	box-sizing: border-box;
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif, sans-serif;
+	font-family: "Familjen Grotesk", sans-serif;
+	background: #000;
+	color: #fff;
 	line-height: 1.5;
+	overflow: hidden;
 }
+
+/* Main page */
 
 a {
 	text-decoration: none;
-	color: var();
+	color: #fff;
 }
+
+ul {
+	list-style: none;
+}
+
+/* Header/Navbar */
+.main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	height: 300px;
+	padding: 0 30px;
+}
+
+.logo {
+	width: 210px;
+	height: auto;
+}
+
+.logo img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* Desktop Menu */
+
+.desktop-main-menu {
+	margin-right: 50px;
+}
+
+.desktop-main-menu ul {
+	display: flex;
+}
+
+.desktop-main-menu ul li {
+	position: relative;
+	margin-right: 20px;
+	padding-bottom: 2px;
+}
+
+.desktop-main-menu ul li a::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.5s ease-in-out;
+}
+
+.desktop-main-menu ul li a:hover:after {
+	transform: scaleX(1);
+	transform-origin: left;
+	transition-duration: 0, 5s;
+}
+
+/* Sections */
+section {
+	position: relative;
+	height: 100vh;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+
+
+/* images */
+
+.section-alpha {
+	background-image: url("../img/section-a.webp");
+}
+
+
+
+
+
+
+
+
+/* landing page */
 
 h1 {
 	font-weight: 300;
@@ -44,7 +142,6 @@ h1 {
 	left: 0;
 	width: 100%;
 	height: 100%;
-
 }
 
 .video-container video {
@@ -64,7 +161,7 @@ h1 {
 	width: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.0);
+	background: rgba(0, 0, 0, 0);
 	position: absolute;
 }
 
@@ -72,7 +169,7 @@ h1 {
 	z-index: 2;
 }
 
-.btn {
+.landing-btn {
 	display: inline-block;
 	padding: 20px 70px;
 	background: var(--primary-color);
@@ -83,6 +180,6 @@ h1 {
 	opacity: 0.7;
 }
 
-.btn:hover {
+.landing-btn:hover {
 	transform: scale(0.98);
 }
